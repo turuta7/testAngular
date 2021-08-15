@@ -1,0 +1,19 @@
+.container-modal {
+  max-width: 395px;
+  min-height: 207px;
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+  border-radius: 10px;
+}
+
+.color__icon{
+  color: #3E52BE;
+
+}
+
+.button-not-decor {
+  padding: 0;
+  border: none;
+  background: none;
+}

@@ -1,0 +1,22 @@
+<div class="flex-container">
+  <p class="text">Your diary</p>
+  <a href="#">
+    <mat-icon matSuffix>arrow_forward</mat-icon>
+  </a>
+</div>
+
+<div>
+  <p>
+    <textarea class="block" placeholder="Write something"></textarea>
+  </p>
+</div>
+
+<div class="flex-container footer">
+  <a (click)="isEmojiPickerVisible = !isEmojiPickerVisible;" href="#">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  </a>
+  <button class="button" color="primary" mat-raised-button>Save</button>
+</div>
+
+<emoji-mart (emojiSelect)="addEmoji($event)" *ngIf="isEmojiPickerVisible" class="emoji-mart footer flex-container"
+            title="Choose your emoji"></emoji-mart>
