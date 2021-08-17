@@ -11,11 +11,13 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import { NewMessageComponent } from './new-message/new-message.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CmpComponent
+    CmpComponent,
+    NewMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import {MatButtonModule} from "@angular/material/button";
     MatIconModule,
     MatInputModule,
     MatButtonModule,
-    PickerModule
+    PickerModule,
   ],
   providers: [
 

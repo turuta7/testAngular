@@ -5,9 +5,13 @@
   </a>
 </div>
 
+<!--<p>{{value}}</p>-->
 <div>
+
   <p>
-    <textarea class="block" placeholder="Write something"></textarea>
+    <textarea #myInput (input)="inputHeandler(myInput.value)" [value]="value" class="block"
+              placeholder="Write something"></textarea>
+    <!--    <textarea class="block" [] placeholder="Write something"></textarea>-->
   </p>
 </div>
 
@@ -15,8 +19,10 @@
   <a (click)="isEmojiPickerVisible = !isEmojiPickerVisible;" href="#">
     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
   </a>
-  <button class="button" color="primary" mat-raised-button>Save</button>
+  <button (click)="add()" class="button" color="primary" mat-raised-button>Save</button>
 </div>
 
+<app-new-message [items]="items"></app-new-message>
 <emoji-mart (emojiSelect)="addEmoji($event)" *ngIf="isEmojiPickerVisible" class="emoji-mart footer flex-container"
             title="Choose your emoji"></emoji-mart>
+
