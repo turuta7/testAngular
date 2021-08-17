@@ -9,21 +9,28 @@ export class CmpComponent implements OnInit {
 
   public items: string[] = []
   value: string = '';
-  public test = 7;
+  visibility: boolean = false;
 
+  icon: string = "sentiment_very_satisfied";
+  keyboardIcon: string = "keyboard_alt";
+  keyboardIcon2: string = "sentiment_very_satisfied"
 
   constructor() {
   }
 
   public add() {
-    this.items = [...this.items, this.value]
-    this.value=''
+    if (this.value !== '') {
+      this.items = [...this.items, this.value];
+      this.value = '';
+    }
   }
 
   public textArea: string = '';
   public isEmojiPickerVisible: boolean | undefined;
 
   public addEmoji($event: any) {
+
+    // this.icon = this.keyboardIcon2
     // this.value = [...this.value, `${this.textArea}${$event.emoji.native}`]
     this.textArea = `${this.textArea}${$event.emoji.native}`;
     this.value = this.value + this.textArea;
@@ -36,11 +43,21 @@ export class CmpComponent implements OnInit {
   }
 
   inputHeandler(value: string) {
-    console.log(value)
-    console.log(this.textArea)
     this.textArea = ''
-    // if(this.textArea) value = "lll";
     this.value = value
+  }
+
+  emojiValue() {
+    this.visibility = !this.visibility;
+    this.isEmojiPickerVisible ? this.icon = this.keyboardIcon2
+      : this.icon = this.keyboardIcon
+
+    this.isEmojiPickerVisible = !this.isEmojiPickerVisible
+  }
+
+  // переключаем переменную
+  toggle() {
+    this.visibility = !this.visibility;
   }
 
 }
