@@ -7,16 +7,17 @@
 
 <div>
   <p>
-    <textarea #myInput (input)="inputHeandler(myInput.value)" [value]="value" class="block"
+    <textarea  #myInput (input)="inputHeandler(myInput.value)" [value]="value" class="block"
               placeholder="Write something"></textarea>
   </p>
 </div>
 
 <div class="flex-container footer">
-  <a  (click)="emojiValue()" href="#">
-    <mat-icon matSuffix>{{icon}}</mat-icon>
+  <a (click)="emojiValue()" href="#">
+    <mat-icon [ngClass]="{key2: visibility}" matSuffix>{{icon}}</mat-icon>
+
   </a>
-  <button [ngClass]="{invisible: visibility}" (click)="add()" class="button" color="primary" >Save</button>
+  <button (click)="add()" [ngClass]="{invisible: visibility}" class="button" color="primary">Save</button>
 </div>
 
 <app-new-message [items]="items"></app-new-message>

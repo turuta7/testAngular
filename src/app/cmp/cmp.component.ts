@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-cmp',
@@ -7,31 +8,39 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CmpComponent implements OnInit {
 
-  public items: string[] = []
+  public items: object[] = [];
+  public textArea: string = '';
+  public isEmojiPickerVisible: boolean | undefined;
   value: string = '';
   visibility: boolean = false;
-
   icon: string = "sentiment_very_satisfied";
-  keyboardIcon: string = "keyboard_alt";
-  keyboardIcon2: string = "sentiment_very_satisfied"
+  keyboardIcon: string = "";
+  keyboardIcon2: string = "sentiment_very_satisfied";
 
   constructor() {
   }
 
+  returnData() {
+    const datePipe = new DatePipe("en-US");
+    return datePipe.transform(new Date(), 'h:mm a | MMM d, y');
+  }
+
   public add() {
     if (this.value !== '') {
-      this.items = [...this.items, this.value];
+      this.items.push({
+        date: this.returnData(),
+        message: this.value
+      })
       this.value = '';
+      if (this.isEmojiPickerVisible) {
+        this.isEmojiPickerVisible = !this.isEmojiPickerVisible;
+        this.visibility = !this.visibility;
+        this.icon = this.keyboardIcon2;
+      }
     }
   }
 
-  public textArea: string = '';
-  public isEmojiPickerVisible: boolean | undefined;
-
   public addEmoji($event: any) {
-
-    // this.icon = this.keyboardIcon2
-    // this.value = [...this.value, `${this.textArea}${$event.emoji.native}`]
     this.textArea = `${this.textArea}${$event.emoji.native}`;
     this.value = this.value + this.textArea;
     this.textArea = ''
@@ -50,14 +59,7 @@ export class CmpComponent implements OnInit {
   emojiValue() {
     this.visibility = !this.visibility;
     this.isEmojiPickerVisible ? this.icon = this.keyboardIcon2
-      : this.icon = this.keyboardIcon
-
-    this.isEmojiPickerVisible = !this.isEmojiPickerVisible
+      : this.icon = this.keyboardIcon;
+    this.isEmojiPickerVisible = !this.isEmojiPickerVisible;
   }
-
-  // переключаем переменную
-  toggle() {
-    this.visibility = !this.visibility;
-  }
-
 }

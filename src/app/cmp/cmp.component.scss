@@ -7,17 +7,6 @@
   max-height: 95px;
 }
 
-textarea::placeholder {
-  padding-left: 16px;
-  padding-top: 16px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  color: #90A4AE;
-}
-
 .flex-container {
   margin-top: 19px;
   margin-left: 16px;
@@ -28,7 +17,6 @@ textarea::placeholder {
 }
 
 .text {
-  font-family: Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -37,9 +25,6 @@ textarea::placeholder {
 }
 
 .button {
-  //border-radius: 20px;
-  //background: #224272;
-  //font-size: 10px
   width: 54px;
   height: 24px;
   border-radius: 18px;
@@ -49,19 +34,11 @@ textarea::placeholder {
   justify-content: center;
   align-items: center;
   padding: 4px 16px;
-border: none;
+  border: none;
   color:#fff;
-
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 10px;
-  //line-height: 16px;
-  /* identical to box height, or 160% */
-
-
-
-
 }
 
 .footer {
@@ -73,8 +50,24 @@ textarea {
   border: 1px solid #F7F8F9;
   box-sizing: border-box;
   border-radius: 4px;
+  padding: 16px;
 }
+
+textarea::placeholder {
+  color: #90A4AE;
+}
+
+//textarea::text {
+//  color: red;
+//}
 
 .invisible {
   width: 83px;
+}
+
+.key2{
+  width: 24px;
+  height: 24px;
+  background-image: url('./img/NicePng_keyboard-png_300053.png');
+  background-size: cover;
 }

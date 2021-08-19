@@ -12,6 +12,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { NewMessageComponent } from './new-message/new-message.component';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NewMessageComponent } from './new-message/new-message.component';
     MatInputModule,
     MatButtonModule,
     PickerModule,
+    CommonModule
   ],
   providers: [
 
