@@ -25,7 +25,7 @@ export class CmpComponent implements OnInit {
     return datePipe.transform(new Date(), 'h:mm a | MMM d, y');
   }
 
-  public add() {
+  public addMessage() {
     if (this.value !== '') {
       this.items.push({
         date: this.returnData(),
@@ -34,6 +34,7 @@ export class CmpComponent implements OnInit {
       this.value = '';
       if (this.isEmojiPickerVisible) {
         this.isEmojiPickerVisible = !this.isEmojiPickerVisible;
+
         this.visibility = !this.visibility;
         this.icon = this.keyboardIcon2;
       }
@@ -60,6 +61,9 @@ export class CmpComponent implements OnInit {
     this.visibility = !this.visibility;
     this.isEmojiPickerVisible ? this.icon = this.keyboardIcon2
       : this.icon = this.keyboardIcon;
-    this.isEmojiPickerVisible = !this.isEmojiPickerVisible;
+    setTimeout(()=>{
+      this.isEmojiPickerVisible = !this.isEmojiPickerVisible;
+    },500)
+
   }
 }

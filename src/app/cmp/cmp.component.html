@@ -1,26 +1,25 @@
 <div class="flex-container">
-  <p class="text">Your diary</p>
+  <p class="chat__header-text">Your diary</p>
   <a href="#">
     <mat-icon matSuffix>arrow_forward</mat-icon>
   </a>
 </div>
 
-<div>
-  <p>
-    <textarea  #myInput (input)="inputHeandler(myInput.value)" [value]="value" class="block"
+<div class="chat__main">
+    <textarea #myInput (input)="inputHeandler(myInput.value)" [value]="value" class="chat__text-input-box chat__main-text "
               placeholder="Write something"></textarea>
-  </p>
 </div>
 
-<div class="flex-container footer">
-  <a (click)="emojiValue()" href="#">
-    <mat-icon [ngClass]="{key2: visibility}" matSuffix>{{icon}}</mat-icon>
+<div class="chat__footer">
+  <div class="flex-container">
+    <a (click)="emojiValue()" href="#">
+      <mat-icon [ngClass]="{chat__icon_background: visibility}" matSuffix>{{icon}}</mat-icon>
+    </a>
+    <button (click)="addMessage()" [ngClass]="{chat__button_83px: visibility}" class="chat__button-save" color="primary">Save</button>
+  </div>
 
-  </a>
-  <button (click)="add()" [ngClass]="{invisible: visibility}" class="button" color="primary">Save</button>
+  <emoji-mart (emojiSelect)="addEmoji($event)" *ngIf="isEmojiPickerVisible"
+              class="emoji-mart flex-container"
+              title="Choose your emoji"></emoji-mart>
+  <app-new-message [items]="items"></app-new-message>
 </div>
-
-<app-new-message [items]="items"></app-new-message>
-<emoji-mart (emojiSelect)="addEmoji($event)" *ngIf="isEmojiPickerVisible" class="emoji-mart footer flex-container"
-            title="Choose your emoji"></emoji-mart>
-

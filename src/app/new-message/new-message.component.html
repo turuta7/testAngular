@@ -1,6 +1,6 @@
-<div *ngFor="let item of items;index as i" class="message">
-  <div class="message-header color-blue">
-    <div class="message-header-date">
+<div *ngFor="let item of items;index as i" class="message-user">
+  <div class="message-user__header color-blue">
+    <div class="message-user__header-date">
       <mat-icon class="mat-icon">date_range</mat-icon>
       <p>{{item.date}}</p>
     </div>
@@ -8,6 +8,6 @@
       <mat-icon class="font-size-20px color-blue">more_vert</mat-icon>
     </a>
   </div>
-  <p>{{item.message}}</p>
+  <div>{{item.message}}</div>
 </div>
 

@@ -1,9 +1,4 @@
-.container-message {
-  background: #F7F8F9;
-  border-radius: 10px;
-}
-
-.message {
+.message-user {
   margin: 10px auto;
   background: #F7F8F9;
   border-radius: 10px;
@@ -14,14 +9,14 @@
   flex-direction: column;
 }
 
-.message-header {
+.message-user__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 10px;
 }
 
-.message-header-date {
+.message-user__header-date {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -38,5 +33,3 @@
 .color-blue {
   color: #3E52BE;
 }
-
-

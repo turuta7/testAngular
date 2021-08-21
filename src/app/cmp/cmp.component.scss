@@ -1,10 +1,74 @@
-.block {
+.chat__header-text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #3E52BE;
+}
+
+.chat__main {
   display: block;
   margin-left: 20px;
-  min-width: 88%;
-  max-width: 88%;
+  margin-right: 20px;
+  max-width: 100%;
   min-height: 95px;
-  max-height: 95px;
+}
+
+.chat__main-text {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 95px;
+}
+
+.chat__footer {
+  margin-bottom: 20px;
+}
+
+.chat__button-save {
+  width: 54px;
+  height: 24px;
+  border-radius: 18px;
+  background: #224272;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 16px;
+  border: none;
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  transition: .4s;
+}
+
+.chat__button-save:hover {
+  transition: .4s;
+  transform: scale(1.2);
+}
+
+.chat__text-input-box {
+  background: #FFFFFF;
+  border: 1px solid #F7F8F9;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.chat__text-input-box::placeholder {
+  color: #90A4AE;
+}
+
+.chat__button_83px {
+  width: 83px;
+  transition: .4s linear;
+}
+
+.chat__icon_background {
+  width: 24px;
+  height: 24px;
+  background-image: url('../../../src/assets/img/NicePng_keyboard-png_300053.png');
+  background-size: cover;
 }
 
 .flex-container {
@@ -16,58 +80,3 @@
   justify-content: space-between;
 }
 
-.text {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  text-transform: capitalize;
-  color: #3E52BE;
-}
-
-.button {
-  width: 54px;
-  height: 24px;
-  border-radius: 18px;
-  background: #224272;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 16px;
-  border: none;
-  color:#fff;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 10px;
-}
-
-.footer {
-  margin-bottom: 20px;
-}
-
-textarea {
-  background: #FFFFFF;
-  border: 1px solid #F7F8F9;
-  box-sizing: border-box;
-  border-radius: 4px;
-  padding: 16px;
-}
-
-textarea::placeholder {
-  color: #90A4AE;
-}
-
-//textarea::text {
-//  color: red;
-//}
-
-.invisible {
-  width: 83px;
-}
-
-.key2{
-  width: 24px;
-  height: 24px;
-  background-image: url('./img/NicePng_keyboard-png_300053.png');
-  background-size: cover;
-}
